@@ -300,12 +300,12 @@
                     @foreach ($activities as $activity)
                     <div class="border border-primary rounded position-relative vesitable-item">
                         <div class="vesitable-img">
-                            <img src="{{ asset('storage/uploads/image/'.$activity->image) }}" class="img-fluid w-100 rounded-top" alt="Service Name">
+                            <img style="height: 165px;" src="{{ asset('storage/uploads/image/'.$activity->image) }}" class="img-fluid w-100 rounded-top" alt="Service Name">
                         </div>
                         {{-- <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div> --}}
                         <div class="p-4 rounded-bottom">
                             <h4>{{ $activity->title }}</h4>
-                            <p>{{ $activity->description }}</p>
+                            {{-- <p>{{ $activity->description }}</p> --}}
                             <div class="d-flex justify-content-between flex-lg-wrap">
                                 {{-- <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p> --}}
                                 {{-- <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a> --}}

@@ -19,6 +19,10 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
+Route::get('/about_us', [PubUserController::class, 'about_us']
+)->name('about_us');
+
+
 Route::get('/procats', [PubUserController::class, 'procats']
 )->name('procats');
 
@@ -31,9 +35,11 @@ Route::get('/sercats', [PubUserController::class, 'sercats']
 Route::get('/sercat_services/{sercat_id}', [PubUserController::class, 'sercat_services']
 )->name('sercat_services');
 
+Route::get('/activities', [PubUserController::class, 'activities']
+)->name('activities');
+
 Route::get('/contact_us', [PubUserController::class, 'contact_us']
 )->name('contact_us');
-
 Route::post('/contact_us_info', [PubUserController::class, 'contact_us_info']
 )->name('contact_us_info');
 

@@ -22,5 +22,17 @@ class Product extends Model
         'procat_id',
     ];
 
+
+
+
+
+
+
+
+
+
+
+
+
 }
 

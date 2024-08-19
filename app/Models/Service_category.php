@@ -20,4 +20,23 @@ class Service_category extends Model
         'position',
     ];
 
+
+    static public function home_sercats(){
+        return self::limit(5)->get();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+

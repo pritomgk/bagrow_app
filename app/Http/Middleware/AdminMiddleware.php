@@ -18,7 +18,7 @@ class AdminMiddleware
         if (session()->get('role_id') <= 4 && session()->get('status') == 1) {
             return $next($request);
         }else{
-            return redirect()->route('admin_login')->with('error', 'Login invalid..');
+            return redirect()->route('admin_login');
         }
     }
 }

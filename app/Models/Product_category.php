@@ -20,4 +20,22 @@ class Product_category extends Model
         'position',
     ];
 
+
+    static public function home_procats(){
+        return self::limit(5)->get();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+

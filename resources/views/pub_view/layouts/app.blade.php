@@ -104,6 +104,12 @@
 
     <body>
 
+        @php
+          $home_procats = App\Models\Product_category::home_procats();
+          $home_sercats = App\Models\Service_category::home_sercats();
+        @endphp
+
+
         <!-- Spinner Start -->
         <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
             <div class="spinner-grow text-primary" role="status"></div>
@@ -139,7 +145,7 @@
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
                             <a href="{{ route('home') }}" class="nav-item nav-link">Home</a>
-                            <a href="" class="nav-item nav-link">About Us</a>
+                            <a href="{{ route('about_us') }}" class="nav-item nav-link">About Us</a>
                             <a href="{{ route('procats') }}" class="nav-item nav-link">Product</a>
                             <a href="{{ route('sercats') }}" class="nav-item nav-link">Service</a>
                             {{-- <div class="nav-item dropdown">
@@ -151,7 +157,7 @@
                                     <a href="404.html" class="dropdown-item">404 Page</a>
                                 </div>
                             </div> --}}
-                            <a href="" class="nav-item nav-link">Activities</a>
+                            <a href="{{ route('activities') }}" class="nav-item nav-link">Activities</a>
                             {{-- <a href="" class="nav-item nav-link">Career</a> --}}
                             <a href="{{ route('contact_us') }}" class="nav-item nav-link">Contact</a>
                         </div>
@@ -276,19 +282,17 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="d-flex flex-column text-start footer-item">
                             <h4 class="text-light mb-3">Service Category</h4>
-                            <a class="btn-link" href="">1.</a>
-                            <a class="btn-link" href="">2.</a>
-                            <a class="btn-link" href="">3.</a>
-                            <a class="btn-link" href="">4.</a>
+                            @foreach ($home_sercats as $home_sercat)
+                                <a class="btn-link" href="">{{ $home_sercat->title }}</a>
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="d-flex flex-column text-start footer-item">
                             <h4 class="text-light mb-3">Product Category</h4>
-                            <a class="btn-link" href="">1.</a>
-                            <a class="btn-link" href="">2.</a>
-                            <a class="btn-link" href="">3.</a>
-                            <a class="btn-link" href="">4.</a>
+                            @foreach ($home_procats as $home_procat)
+                                <a class="btn-link" href="">{{ $home_procat->title }}</a>
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">

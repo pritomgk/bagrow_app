@@ -23,6 +23,10 @@ class PubUserController extends Controller
         return view('pub_view.home', compact('products', 'services', 'activities'));
     }
 
+    public function about_us() {
+        return view('pub_view.about_us');
+    }
+
     public function procats() {
 
         $procats = Product_category::all();
@@ -50,6 +54,14 @@ class PubUserController extends Controller
 
         return view('pub_view.sercat_services', compact('services'));
     }
+
+    public function activities() {
+
+        $activities = Activity::all();
+
+        return view('pub_view.activity', compact('activities'));
+    }
+
 
     public function contact_us() {
         return view('pub_view.contact_us');
